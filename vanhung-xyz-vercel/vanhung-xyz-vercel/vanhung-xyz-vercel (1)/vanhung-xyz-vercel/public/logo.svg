@@ -1,0 +1,21 @@
+<svg width="250" height="75" viewBox="0 0 250 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Text -->
+  <text x="15" y="45" font-family="&#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="36" font-weight="900" fill="#1e293b" letter-spacing="-1">
+    VANHUNG<tspan fill="#0284c7">.</tspan><tspan fill="#0ea5e9">X</tspan><tspan fill="#38bdf8">Y</tspan><tspan fill="#7dd3fc">Z</tspan>
+  </text>
+  
+  <!-- Gradient Underline -->
+  <line x1="15" y1="58" x2="235" y2="58" stroke="url(#paint0_linear)" stroke-width="4" stroke-linecap="round" />
+  <defs>
+    <linearGradient id="paint0_linear" x1="15" y1="58" x2="235" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0284c7" />
+      <stop offset="0.5" stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#7dd3fc" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Small Text -->
+  <text x="20" y="70" font-family="&#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="10" fill="#64748b">
+    AUTOMATED DIGITAL STORE
+  </text>
+</svg>

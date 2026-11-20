@@ -1,0 +1,18 @@
+{
+  "name": "vanhung-xyz-store",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VANHUNG.XYZ — Hệ sinh thái tài nguyên MMO & AI tự động 24/7 (Vite + Vercel Serverless + PostgreSQL Row-Lock)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
