@@ -1,0 +1,15 @@
+{
+  "name": "vanhung-xyz-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VANHUNG.XYZ — Hệ sinh thái tài nguyên MMO & AI tự động 24/7",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

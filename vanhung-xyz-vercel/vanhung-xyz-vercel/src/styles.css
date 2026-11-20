@@ -1,0 +1,193 @@
+/* =========================================================================
+       1. DESIGN TOKENS (DARK CYBER-TECH DEFAULT + LIGHT MODE)
+       ========================================================================= */
+    :root,
+    [data-theme="dark"] {
+      --bg-primary: #050811;
+      --bg-secondary: #0B1120;
+      --bg-elevated: #0F172A;
+      --bg-input: #0B1222;
+      --surface-glass: rgba(11, 17, 32, 0.78);
+      --surface-hover: rgba(30, 41, 59, 0.55);
+
+      --border-subtle: rgba(148, 163, 184, 0.14);
+      --border-strong: rgba(148, 163, 184, 0.25);
+
+      --text-primary: #F8FAFC;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+
+      --accent-emerald: #10B981;
+      --accent-cyan: #06B6D4;
+      --accent-sky: #38BDF8;
+      --accent-indigo: #6366F1;
+      --accent-amber: #F59E0B;
+      --accent-rose: #F43F5E;
+
+      --ticker-bg: rgba(6, 78, 59, 0.34);
+      --ticker-border: rgba(16, 185, 129, 0.24);
+      --ticker-text: #6EE7B7;
+
+      --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.38);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #F4F7FB;
+      --bg-secondary: #FFFFFF;
+      --bg-elevated: #FFFFFF;
+      --bg-input: #F8FAFC;
+      --surface-glass: rgba(255, 255, 255, 0.88);
+      --surface-hover: rgba(241, 245, 249, 0.9);
+
+      --border-subtle: rgba(15, 23, 42, 0.09);
+      --border-strong: rgba(15, 23, 42, 0.18);
+
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+
+      --accent-emerald: #059669;
+      --accent-cyan: #0284C7;
+      --accent-sky: #0EA5E9;
+      --accent-indigo: #4F46E5;
+      --accent-amber: #D97706;
+      --accent-rose: #E11D48;
+
+      --ticker-bg: rgba(16, 185, 129, 0.1);
+      --ticker-border: rgba(5, 150, 105, 0.22);
+      --ticker-text: #047857;
+
+      --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.06);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: clip;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 220ms var(--ease-out), color 220ms var(--ease-out);
+    }
+
+    [data-theme="dark"] body {
+      background-image:
+        radial-gradient(circle at 12% 0%, rgba(16, 185, 129, 0.11), transparent 36%),
+        radial-gradient(circle at 88% 8%, rgba(6, 182, 212, 0.10), transparent 34%),
+        radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.08), transparent 45%);
+    }
+
+    [data-theme="light"] body {
+      background-image:
+        radial-gradient(circle at 12% 0%, rgba(16, 185, 129, 0.08), transparent 36%),
+        radial-gradient(circle at 88% 8%, rgba(2, 132, 199, 0.08), transparent 36%);
+    }
+
+    .font-mono-code {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+
+    .glass-panel {
+      background: var(--surface-glass);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+    }
+
+    .surface-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .input-field {
+      background: var(--bg-input);
+      color: var(--text-primary);
+      border: 1px solid var(--border-strong);
+      transition: border-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+    }
+    .input-field::placeholder { color: var(--text-muted); }
+    .input-field:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+    }
+
+    .btn-cyber {
+      transition: transform 150ms var(--ease-out), box-shadow 150ms var(--ease-out), filter 150ms var(--ease-out);
+      cursor: pointer;
+    }
+    .btn-cyber:hover:not(:disabled) {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+    }
+    .btn-cyber:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+    .btn-cyber:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Live Ticker */
+    .ticker-wrap {
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--ticker-bg);
+      border-bottom: 1px solid var(--ticker-border);
+      color: var(--ticker-text);
+    }
+    .ticker-move {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-move:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Nav Active State */
+    .nav-tab {
+      color: var(--text-muted);
+      transition: all 160ms var(--ease-out);
+      cursor: pointer;
+    }
+    .nav-tab:hover {
+      color: var(--text-primary);
+      background: var(--surface-hover);
+    }
+    .nav-tab.is-active {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(6, 182, 212, 0.16));
+      color: var(--text-primary);
+      border: 1px solid rgba(16, 185, 129, 0.32);
+    }
+
+    /* Row Hover */
+    .mmo-row {
+      transition: background-color 140ms var(--ease-out);
+    }
+    .mmo-row:hover {
+      background-color: var(--surface-hover);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+
+    /* Focus Ring */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--accent-emerald);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-move { animation: none !important; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
